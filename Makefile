@@ -6,3 +6,11 @@ build:
 install:
 	git submodule update --init
 	npm install .
+
+predeploy:
+	git checkout build
+
+
+deploy: predeploy build
+	git checkout master
+	git mv output/* ./
