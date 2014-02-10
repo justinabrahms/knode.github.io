@@ -14,7 +14,6 @@ predeploy:
 deploy: predeploy install build
 	git checkout master
 	rm -rf output/style
-	mv output/* ./
-	rm -rf style/.git
+	cp -r output/* ./
 	git add *.html stylesheets javascripts images style
 	git commit -m "compiled from builddir" 
