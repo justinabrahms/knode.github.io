@@ -13,6 +13,7 @@ predeploy:
 
 deploy: predeploy install build
 	git checkout master
+	rm -rf output/style
 	mv output/* ./
 	rm -rf style/.git
 	git add *.html stylesheets javascripts images style
